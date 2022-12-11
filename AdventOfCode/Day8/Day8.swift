@@ -2,7 +2,7 @@ import Foundation
 import Parsing
 
 private enum Parsers {
-	static let row = Many {
+	static let row = Many(1...) {
 		Digits(1)
 	} separator: {
 		""
@@ -11,6 +11,8 @@ private enum Parsers {
 	static let input = Many {
 		row
 	} separator: {
+		Whitespace(1, .vertical)
+	} terminator: {
 		Whitespace(1, .vertical)
 	}
 }
@@ -28,6 +30,8 @@ struct Day8: Day {
 			let file = try String(contentsOfFile: path, encoding: .utf8)
 
 			forest = try Parsers.input.parse(file).dropLast()
+
+			print(forest)
 		} catch {
 			print(error)
 			forest = []

@@ -10,14 +10,12 @@ private enum Parsers {
 		}
 	}
 
-	static let input = Parse {
-		Many {
-			calories
-		} separator: {
-			Whitespace(2, .vertical)
-		} terminator: {
-			Whitespace(1, .vertical)
-		}
+	static let input = Many {
+		calories
+	} separator: {
+		Whitespace(2, .vertical)
+	} terminator: {
+		Whitespace(1, .vertical)
 	}
 }
 
