@@ -30,8 +30,6 @@ struct Day8: Day {
 			let file = try String(contentsOfFile: path, encoding: .utf8)
 
 			forest = try Parsers.input.parse(file)
-
-			print(forest)
 		} catch {
 			print(error)
 			forest = []
