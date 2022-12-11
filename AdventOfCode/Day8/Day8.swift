@@ -29,7 +29,7 @@ struct Day8: Day {
 		do {
 			let file = try String(contentsOfFile: path, encoding: .utf8)
 
-			forest = try Parsers.input.parse(file).dropLast()
+			forest = try Parsers.input.parse(file)
 
 			print(forest)
 		} catch {
