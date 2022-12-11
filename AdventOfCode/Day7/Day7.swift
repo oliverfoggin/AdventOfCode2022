@@ -63,8 +63,6 @@ struct Day7: Day {
 					break
 				}
 			}
-
-			print(logs)
 		} catch {
 			print(error)
 			logs = []

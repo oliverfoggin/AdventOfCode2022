@@ -1,7 +1,7 @@
 import SwiftUI
 
 enum Route: CaseIterable {
-	case day1, day2, day3, day4, day5, day6, day7
+	case day1, day2, day3, day4, day5, day6, day7, day8
 
 	var title: String {
 		switch self {
@@ -12,6 +12,7 @@ enum Route: CaseIterable {
 		case .day5: return "Day 5: Supply Stacks"
 		case .day6: return "Day 6: Tuning Trouble"
 		case .day7: return "Day 7: No Space Left On Device"
+		case .day8: return "Day 8: Treetop Tree House"
 		}
 	}
 
@@ -24,6 +25,7 @@ enum Route: CaseIterable {
 		case .day5: return Day5()
 		case .day6: return Day6()
 		case .day7: return Day7()
+		case .day8: return Day8()
 		}
 	}
 
