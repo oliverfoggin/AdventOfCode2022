@@ -35,6 +35,8 @@
 		F66FAA4D2946743100B7A8EA /* day9.txt in Resources */ = {isa = PBXBuildFile; fileRef = F66FAA4C2946743100B7A8EA /* day9.txt */; };
 		F66FAA502946839900B7A8EA /* Day10.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66FAA4F2946839900B7A8EA /* Day10.swift */; };
 		F66FAA52294683A300B7A8EA /* day10.txt in Resources */ = {isa = PBXBuildFile; fileRef = F66FAA51294683A300B7A8EA /* day10.txt */; };
+		F66FAA55294695C900B7A8EA /* Day11.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66FAA54294695C900B7A8EA /* Day11.swift */; };
+		F66FAA57294695D000B7A8EA /* day11.txt in Resources */ = {isa = PBXBuildFile; fileRef = F66FAA56294695D000B7A8EA /* day11.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +69,8 @@
 		F66FAA4C2946743100B7A8EA /* day9.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = day9.txt; sourceTree = "<group>"; };
 		F66FAA4F2946839900B7A8EA /* Day10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day10.swift; sourceTree = "<group>"; };
 		F66FAA51294683A300B7A8EA /* day10.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = day10.txt; sourceTree = "<group>"; };
+		F66FAA54294695C900B7A8EA /* Day11.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day11.swift; sourceTree = "<group>"; };
+		F66FAA56294695D000B7A8EA /* day11.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = day11.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,7 @@
 		F66FAA0429432AAB00B7A8EA /* AdventOfCode */ = {
 			isa = PBXGroup;
 			children = (
+				F66FAA53294695C300B7A8EA /* Day11 */,
 				F66FAA4E2946839300B7A8EA /* Day10 */,
 				F66FAA492946742400B7A8EA /* Day9 */,
 				F66FAA442946580000B7A8EA /* Day8 */,
@@ -220,6 +225,15 @@
 			path = Day10;
 			sourceTree = "<group>";
 		};
+		F66FAA53294695C300B7A8EA /* Day11 */ = {
+			isa = PBXGroup;
+			children = (
+				F66FAA54294695C900B7A8EA /* Day11.swift */,
+				F66FAA56294695D000B7A8EA /* day11.txt */,
+			);
+			path = Day11;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -286,6 +300,7 @@
 			files = (
 				F66FAA2729435F0100B7A8EA /* day2.txt in Resources */,
 				F66FAA0E29432AAC00B7A8EA /* Preview Assets.xcassets in Resources */,
+				F66FAA57294695D000B7A8EA /* day11.txt in Resources */,
 				F66FAA3B29462D3600B7A8EA /* day6.txt in Resources */,
 				F66FAA0A29432AAC00B7A8EA /* Assets.xcassets in Resources */,
 				F66FAA482946581200B7A8EA /* day8.txt in Resources */,
@@ -312,6 +327,7 @@
 				F66FAA36294397A700B7A8EA /* Day5.swift in Sources */,
 				F66FAA1F29432FBA00B7A8EA /* DayView.swift in Sources */,
 				F66FAA502946839900B7A8EA /* Day10.swift in Sources */,
+				F66FAA55294695C900B7A8EA /* Day11.swift in Sources */,
 				F66FAA462946580700B7A8EA /* Day8.swift in Sources */,
 				F66FAA212943447800B7A8EA /* Day.swift in Sources */,
 				F66FAA242943484000B7A8EA /* Day2.swift in Sources */,
