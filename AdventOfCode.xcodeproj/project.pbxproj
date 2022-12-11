@@ -33,6 +33,8 @@
 		F66FAA482946581200B7A8EA /* day8.txt in Resources */ = {isa = PBXBuildFile; fileRef = F66FAA472946581200B7A8EA /* day8.txt */; };
 		F66FAA4B2946742B00B7A8EA /* Day9.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66FAA4A2946742B00B7A8EA /* Day9.swift */; };
 		F66FAA4D2946743100B7A8EA /* day9.txt in Resources */ = {isa = PBXBuildFile; fileRef = F66FAA4C2946743100B7A8EA /* day9.txt */; };
+		F66FAA502946839900B7A8EA /* Day10.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66FAA4F2946839900B7A8EA /* Day10.swift */; };
+		F66FAA52294683A300B7A8EA /* day10.txt in Resources */ = {isa = PBXBuildFile; fileRef = F66FAA51294683A300B7A8EA /* day10.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +65,8 @@
 		F66FAA472946581200B7A8EA /* day8.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = day8.txt; sourceTree = "<group>"; };
 		F66FAA4A2946742B00B7A8EA /* Day9.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day9.swift; sourceTree = "<group>"; };
 		F66FAA4C2946743100B7A8EA /* day9.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = day9.txt; sourceTree = "<group>"; };
+		F66FAA4F2946839900B7A8EA /* Day10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day10.swift; sourceTree = "<group>"; };
+		F66FAA51294683A300B7A8EA /* day10.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = day10.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,7 @@
 		F66FAA0429432AAB00B7A8EA /* AdventOfCode */ = {
 			isa = PBXGroup;
 			children = (
+				F66FAA4E2946839300B7A8EA /* Day10 */,
 				F66FAA492946742400B7A8EA /* Day9 */,
 				F66FAA442946580000B7A8EA /* Day8 */,
 				F66FAA3F294643A500B7A8EA /* Day7 */,
@@ -206,6 +211,15 @@
 			path = Day9;
 			sourceTree = "<group>";
 		};
+		F66FAA4E2946839300B7A8EA /* Day10 */ = {
+			isa = PBXGroup;
+			children = (
+				F66FAA4F2946839900B7A8EA /* Day10.swift */,
+				F66FAA51294683A300B7A8EA /* day10.txt */,
+			);
+			path = Day10;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -280,6 +294,7 @@
 				F66FAA2C29437C3F00B7A8EA /* day3.txt in Resources */,
 				F66FAA432946452100B7A8EA /* day7.txt in Resources */,
 				F66FAA4D2946743100B7A8EA /* day9.txt in Resources */,
+				F66FAA52294683A300B7A8EA /* day10.txt in Resources */,
 				F66FAA34294397A100B7A8EA /* day5.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,6 +311,7 @@
 				F66FAA3129438F1A00B7A8EA /* Day4.swift in Sources */,
 				F66FAA36294397A700B7A8EA /* Day5.swift in Sources */,
 				F66FAA1F29432FBA00B7A8EA /* DayView.swift in Sources */,
+				F66FAA502946839900B7A8EA /* Day10.swift in Sources */,
 				F66FAA462946580700B7A8EA /* Day8.swift in Sources */,
 				F66FAA212943447800B7A8EA /* Day.swift in Sources */,
 				F66FAA242943484000B7A8EA /* Day2.swift in Sources */,

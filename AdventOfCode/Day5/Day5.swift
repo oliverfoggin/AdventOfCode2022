@@ -3,7 +3,7 @@ import Parsing
 
 typealias Crate = String
 
-struct Instruction {
+private struct Instruction {
 	let count: Int
 	let source: Int
 	let dest: Int
@@ -75,7 +75,7 @@ private struct Storage {
 
 struct Day5: Day {
 	private var storage: Storage
-	let instructions: [Instruction]
+	private let instructions: [Instruction]
 
 	init() {
 		guard let path = Bundle.main.path(forResource: "day5", ofType: "txt") else {
