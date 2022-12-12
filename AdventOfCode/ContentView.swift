@@ -1,52 +1,28 @@
 import SwiftUI
 
-enum Route: CaseIterable {
-	case day1, day2, day3, day4, day5, day6, day7, day8, day9, day10, day11
-
-	var title: String {
-		switch self {
-		case .day1: return "Day 1: Calorie Counting"
-		case .day2: return "Day 2: Rock Paper Scissors"
-		case .day3: return "Day 3: Rucksack Reorganization"
-		case .day4: return "Day 4: Camp Cleanup"
-		case .day5: return "Day 5: Supply Stacks"
-		case .day6: return "Day 6: Tuning Trouble"
-		case .day7: return "Day 7: No Space Left On Device"
-		case .day8: return "Day 8: Treetop Tree House"
-		case .day9: return "Day 9: Rope Bridge"
-		case .day10: return "Day 10: Cathode-Ray Tube"
-		case .day11: return "Day 11: Monkey in the Middle"
-		}
-	}
-
-	var source: any Day {
-		switch self {
-		case .day1: return Day1()
-		case .day2: return Day2()
-		case .day3: return Day3()
-		case .day4: return Day4()
-		case .day5: return Day5()
-		case .day6: return Day6()
-		case .day7: return Day7()
-		case .day8: return Day8()
-		case .day9: return Day9()
-		case .day10: return Day10()
-		case .day11: return Day11()
-		}
-	}
-
-	@ViewBuilder var view: some View {
-		DayView(title: title, source: source)
-	}
-}
+private let allDays: [DayModel] = [
+	.init(id: 1, title: "Day 1: Calorie Counting", source: Day1.init),
+	.init(id: 2, title: "Day 2: Rock Paper Scissors", source: Day2.init),
+	.init(id: 3, title: "Day 3: Rucksack Reorganization", source: Day3.init),
+	.init(id: 4, title: "Day 4: Camp Cleanup", source: Day4.init),
+	.init(id: 5, title: "Day 5: Supply Stacks", source: Day5.init),
+	.init(id: 6, title: "Day 6: Tuning Trouble", source: Day6.init),
+	.init(id: 7, title: "Day 7: No Space Left On Device", source: Day7.init),
+	.init(id: 8, title: "Day 8: Treetop Tree House", source: Day8.init),
+	.init(id: 9, title: "Day 9: Rope Bridge", source: Day9.init),
+	.init(id: 10, title: "Day 10: Cathode-Ray Tube", source: Day10.init),
+	.init(id: 11, title: "Day 11: Monkey in the Middle", source: Day11.init),
+]
 
 struct ContentView: View {
-	@State var destination: Route?
+	let days: [DayModel] = allDays
+
+	@State var destination: DayModel?
 
 	var body: some View {
 		NavigationStack {
 			List {
-				ForEach(Route.allCases, id: \.self) { day in
+				ForEach(days) { day in
 					Button {
 						destination = day
 					} label: {
@@ -64,7 +40,7 @@ struct ContentView: View {
 				case .none:
 					EmptyView()
 				case .some(let day):
-					day.view
+					DayView(day: day)
 				}
 			}
 		}
