@@ -57,8 +57,6 @@ struct Day10: Day {
 					acc.append(Cycle(start: prev.end, end: prev.end + value))
 				}
 			}
-
-//			print(cycles)
 		} catch {
 			instructions = []
 			cycles = []
@@ -68,7 +66,6 @@ struct Day10: Day {
 
 	var part1: String {
 		String(stride(from: 19, to: cycles.count, by: 40).reduce(into: 0) { acc, index in
-			print("\(cycles[index]) * \(index + 1) = \(cycles[index].start * (index + 1))")
 			acc += cycles[index].start * (index + 1)
 		})
 	}
