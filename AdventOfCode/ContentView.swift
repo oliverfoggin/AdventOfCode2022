@@ -34,7 +34,7 @@ struct ContentView: View {
 					}
 				}
 			}
-			.navigationTitle("Advent of Code 2022")
+			.navigationTitle("Calendar")
 			.navigationDestination(isPresented: $destination.isPresent()) {
 				switch destination {
 				case .none:

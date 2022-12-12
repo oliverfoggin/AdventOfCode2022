@@ -24,6 +24,6 @@ struct DayView: View {
 		.frame(maxWidth: .infinity, alignment: .leading)
 		.padding()
 		.monospaced()
-		.navigationTitle(day.title)
+		.navigationTitle(day.pageTitle)
 	}
 }

@@ -8,6 +8,10 @@ struct DayModel: Identifiable {
 	var url: URL {
 		URL(string: "https://adventofcode.com/2022/day/\(id)")!
 	}
+
+	var pageTitle: String {
+		"Day \(id)"
+	}
 }
 
 protocol Day {
