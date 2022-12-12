@@ -17,8 +17,11 @@ struct DayView: View {
 				.cornerRadius(12)
 				.padding()
 				.frame(maxWidth: .infinity)
-			Text("Part 1: \(source.part1.description)")
-			Text("Part 2: \(source.part2.description)")
+			Group {
+				Text("Part 1: \(source.part1.description)")
+				Text("Part 2: \(source.part2.description)")
+			}
+				.font(.footnote)
 			Spacer()
 		}
 		.frame(maxWidth: .infinity, alignment: .leading)
