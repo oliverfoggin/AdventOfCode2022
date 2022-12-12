@@ -171,7 +171,6 @@ struct Day11: Day {
 					}
 				}
 			}
-			print(round)
 		}
 		.map(\.itemsInspected)
 		.sorted(by: >)
