@@ -128,7 +128,6 @@ struct Day11: Day {
 		do {
 			let file = try String(contentsOfFile: path, encoding: .utf8)
 			monkeys = try Parsers.input.parse(file)
-			print(monkeys)
 		} catch {
 			print(error)
 			monkeys = []
@@ -156,25 +155,31 @@ struct Day11: Day {
 	}
 
 	var part2: Int {
-		0
-//		(0..<10000).reduce(into: monkeys) { monkeys, _ in
-//			for i in 0..<monkeys.count {
-//				while !monkeys[i].items.isEmpty {
-//					let item = monkeys[i].throwItem(divideByThree: false)
-//
-//					if monkeys[i].testItem(item) {
-//						monkeys[monkeys[i].ifTrue].catchItem(item)
-//					} else {
-//						monkeys[monkeys[i].ifFalse].catchItem(item)
-//					}
-//				}
-//			}
-//
-//			print(monkeys.map(\.itemsInspected))
-//		}
-//		.map(\.itemsInspected)
-//		.sorted(by: >)
-//		.prefix(2)
-//		.reduce(1, *)
+		let totalDivider = monkeys.map(\.predicateValue).reduce(1, *)
+
+		let output = (0..<10000).reduce(into: monkeys) { monkeys, round in
+			for i in 0..<monkeys.count {
+				while !monkeys[i].items.isEmpty {
+					var item = monkeys[i].throwItem(divideByThree: false)
+
+					item %= totalDivider
+
+					if monkeys[i].testItem(item) {
+						monkeys[monkeys[i].ifTrue].catchItem(item)
+					} else {
+						monkeys[monkeys[i].ifFalse].catchItem(item)
+					}
+				}
+			}
+			print(round)
+		}
+		.map(\.itemsInspected)
+		.sorted(by: >)
+		.prefix(2)
+		.reduce(1, *)
+
+		print(output)
+
+		return output
 	}
 }
