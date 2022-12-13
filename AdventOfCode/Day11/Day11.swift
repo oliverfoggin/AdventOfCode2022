@@ -4,19 +4,17 @@ import Parsing
 private struct Monkey {
 	let id: Int
 	var items: [Int]
-	let function: OpType
-	let functionValue: OpValue
+	let function: Command
 	let predicateValue: Int
 	let ifTrue: Int
 	let ifFalse: Int
 
 	var itemsInspected = 0
 
-	init(id: Int, items: [Int], function: (OpType, OpValue), predicateValue: Int, ifTrue: Int, ifFalse: Int) {
+	init(id: Int, items: [Int], function: Command, predicateValue: Int, ifTrue: Int, ifFalse: Int) {
 		self.id = id
 		self.items = items
-		self.function = function.0
-		self.functionValue = function.1
+		self.function = function
 		self.predicateValue = predicateValue
 		self.ifTrue = ifTrue
 		self.ifFalse = ifFalse
@@ -25,14 +23,12 @@ private struct Monkey {
 	mutating func throwItem(divideByThree: Bool = true) -> Int {
 		var item = items.remove(at: 0)
 
-		switch (function, functionValue) {
-		case (.add, .number(let value)):
-			item += value
-		case (.add, .old):
-			item += item
-		case (.multiply, .number(let value)):
-			item *= value
-		case (.multiply, .old):
+		switch function {
+		case .add(let number):
+			item += number
+		case .multiply(let number):
+			item *= number
+		case .square:
 			item *= item
 		}
 
@@ -54,22 +50,10 @@ private struct Monkey {
 	}
 }
 
-/*
- Monkey 1:
- Starting items: 54, 65, 75, 74
- Operation: new = old + 6
- Test: divisible by 19
- If true: throw to monkey 2
- If false: throw to monkey 0
- */
-
-enum OpType {
-	case add, multiply
-}
-
-enum OpValue {
-	case number(Int)
-	case old
+enum Command {
+	case add(Int)
+	case multiply(Int)
+	case square
 }
 
 private enum Parsers {
@@ -80,31 +64,30 @@ private enum Parsers {
 	}
 
 	static let function = Parse {
-		Skip { "new = old " }
+		"new = old "
 		OneOf {
-			"+".map { OpType.add }
-			"*".map { OpType.multiply }
-		}
-		Skip { " " }
-		OneOf {
-			Int.parser().map { OpValue.number($0) }
-			"old".map { OpValue.old }
+			Parse { "+ "; Int.parser() }.map { Command.add($0) }
+			Parse { "* "; Int.parser() }.map { Command.multiply($0) }
+			"* old".map { Command.square }
 		}
 	}
 
+	/*
+	 Monkey 1:
+	 Starting items: 54, 65, 75, 74
+	 Operation: new = old + 6
+	 Test: divisible by 19
+	 If true: throw to monkey 2
+	 If false: throw to monkey 0
+	 */
+
 	static let monkey = Parse(Monkey.init) {
-		Skip { "Monkey " }
-		Int.parser()
-		Skip { PrefixThrough("items: ") }
-		items
-		Skip { PrefixThrough("Operation: ") }
-		function
-		Skip { PrefixThrough("divisible by ") }
-		Int.parser()
-		Skip { PrefixThrough("throw to monkey ") }
-		Int.parser()
-		Skip { PrefixThrough("throw to monkey ") }
-		Int.parser()
+		"Monkey "; Int.parser(); ":\n"
+		"  Starting items: "; items; "\n"
+		"  Operation: "; function; "\n"
+		"  Test: divisible by "; Int.parser(); "\n"
+		"    If true: throw to monkey "; Int.parser(); "\n"
+		"    If false: throw to monkey "; Int.parser();
 	}
 
 	static let input = Many {

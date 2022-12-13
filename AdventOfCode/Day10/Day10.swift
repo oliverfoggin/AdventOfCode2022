@@ -15,7 +15,7 @@ private enum Instruction {
 
 private enum Parsers {
 	static let instruction = OneOf {
-		Parse { Skip { "addx " }; Int.parser() }.map { Instruction.addx($0) }
+		Parse { "addx "; Int.parser() }.map { Instruction.addx($0) }
 		"noop".map { Instruction.noop }
 	}
 

@@ -12,10 +12,10 @@ struct Movement {
 
 private enum Parsers {
 	static let move = OneOf {
-		Parse { Skip { "R " }; Int.parser() }.map { Movement(direction: .right, count: $0) }
-		Parse { Skip { "L " }; Int.parser() }.map { Movement(direction: .left, count: $0) }
-		Parse { Skip { "U " }; Int.parser() }.map { Movement(direction: .up, count: $0) }
-		Parse { Skip { "D " }; Int.parser() }.map { Movement(direction: .down, count: $0) }
+		Parse { "R "; Int.parser() }.map { Movement(direction: .right, count: $0) }
+		Parse { "L "; Int.parser() }.map { Movement(direction: .left, count: $0) }
+		Parse { "U "; Int.parser() }.map { Movement(direction: .up, count: $0) }
+		Parse { "D "; Int.parser() }.map { Movement(direction: .down, count: $0) }
 	}
 
 	static let input = Many {
