@@ -12,6 +12,7 @@ private let allDays: [DayModel] = [
 	.init(id: 9, title: "Day 9: Rope Bridge", source: Day9.init),
 	.init(id: 10, title: "Day 10: Cathode-Ray Tube", source: Day10.init),
 	.init(id: 11, title: "Day 11: Monkey in the Middle", source: Day11.init),
+	.init(id: 12, title: "Day 12: Hill Climbing Algorithm", source: Day12.init),
 ]
 
 struct ContentView: View {

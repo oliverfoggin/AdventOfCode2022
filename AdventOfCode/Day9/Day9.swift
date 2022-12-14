@@ -75,9 +75,13 @@ struct Point: Hashable {
 	}
 }
 
-struct Board {
+struct Board: CustomDebugStringConvertible {
 	var visited: Set<Point> = []
 	var ropePositions: [Point]
+
+	var debugDescription: String {
+		let minX =
+	}
 
 	init(ropeLength: Int) {
 		ropePositions = Array(repeating: .zero, count: ropeLength)
